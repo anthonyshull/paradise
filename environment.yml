@@ -1,0 +1,8 @@
+name: paradise
+dependencies:
+  - pip:
+    - invoke
+    - mypy
+    - pycodestyle
+    - pylint
+    - pytest
