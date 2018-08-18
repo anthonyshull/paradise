@@ -1,12 +1,19 @@
-from Container import Container
+from abc import ABC, abstractmethod
 
-class Monad(Container):
+from .Functor import Functor
+from .Pointed import Pointed
 
-  def __init__(self, value):
-    self.value = value
+class Monad(Functor, Pointed):
   
-  def _bind(self, fn):
+  def chain(self, fn):
+    return self.fmap(fn).join()
+
+  @abstractmethod
+  def join(self):
     pass
 
-def bind(fn, m):
-  return m.bind(fn)
+def chain(fn, m):
+  return m.chain(fn)
+
+def join(m):
+  return m.join()

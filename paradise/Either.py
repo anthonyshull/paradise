@@ -1,5 +1,5 @@
-from Functor import Functor
-from Monad import Monad
+from .Functor import Functor
+from .Monad import Monad
 
 class Either(Monad, Functor):
 

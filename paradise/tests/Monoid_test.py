@@ -11,5 +11,5 @@ class IntegerUnderAddition(Integer, Monoid):
   identity = Integer(0)
 
 def test_monoid_identity():
-  integer_under_addition = IntegerUnderAddition(1)
-  assert (integer_under_addition + integer_under_addition.identity).value == integer_under_addition.value
+  i_u_a = IntegerUnderAddition(1)
+  assert (i_u_a + i_u_a.identity).value == i_u_a.value

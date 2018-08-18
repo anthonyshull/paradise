@@ -1,10 +1,12 @@
-class Functor:
+from abc import ABC, abstractmethod
 
-  def __init__(self, value):
-    self.value = value
+from .Container import Container
 
-  def _map(self, fn):
-    return fn(self.value)
+class Functor(ABC, Container):
 
-def map(fn, f):
-  return f.map(fn)
+  @abstractmethod
+  def fmap(self, fn):
+    pass
+
+def fmap(fn, f):
+  return f.fmap(fn)
