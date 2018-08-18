@@ -2,7 +2,7 @@ from ..Semigroup import Semigroup
 
 class Integer(Semigroup):
 
-  def add(self, other):
+  def combine(self, other):
     return Integer(self.value + other.value)
 
 def test_semigroup_create():

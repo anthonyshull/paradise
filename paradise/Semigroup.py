@@ -5,11 +5,11 @@ from .Container import Container
 class Semigroup(Container, ABC):
   
   @abstractmethod
-  def add(self, other):
+  def combine(self, other):
     pass
 
   def __add__(self, other):
-    return self.add(other)
+    return self.combine(other)
 
   def __radd__(self, other):
-    return other.add(self)
+    return other.combine(self)

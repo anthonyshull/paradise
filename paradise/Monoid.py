@@ -1,11 +1,11 @@
-from abc import ABC, abstractmethod
+from abc import ABC, abstractclassmethod
 
 from .Semigroup import Semigroup
 
 class Monoid(Semigroup, ABC):
   
   @property
-  @abstractmethod
+  @abstractclassmethod
   def identity(self):
     pass
 
