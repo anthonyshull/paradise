@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
 
-from .Container import Container
+from .container import Container
+
 
 class Semigroup(Container, ABC):
-  
+
   @abstractmethod
   def combine(self, other):
     pass

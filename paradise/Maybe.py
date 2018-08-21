@@ -1,19 +1,20 @@
-from .Monad import Monad
+from .monad import Monad
+
 
 class Maybe(Monad):
-  
+
   def fmap(self, fn):
     if self.is_nothing():
-      return Nothing(None)
+      return Nothing()
     else:
       return Just(self.fmap(fn))
 
   def join(self):
     if self.is_nothing():
-      return Nothing(None)
+      return Nothing()
     else:
       return self.value
-  
+
   def is_nothing(self):
     if self.value is None:
       return True
@@ -25,12 +26,14 @@ class Maybe(Monad):
       return True
     else:
       return False
-  
+
   def __not__(self):
     return self.is_nothing()
 
+
 class Just(Maybe):
   pass
+
 
 class Nothing(Maybe):
   pass

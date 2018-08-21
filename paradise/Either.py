@@ -1,10 +1,19 @@
-from .Functor import Functor
-from .Monad import Monad
+from .monad import Monad
 
-class Either(Monad, Functor):
 
-  def map(self, fn):
-    pass
+class Left(Monad):
 
-  def bind(self, fn):
-    pass
+  def fmap(self, fn):
+    return self
+
+  def join(self):
+    return self
+
+
+class Right(Monad):
+
+  def fmap(self, fn):
+    return Right(fn(self.value))
+
+  def join(self):
+    return self.value

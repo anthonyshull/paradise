@@ -1,6 +1,8 @@
-from .Pointed import Pointed
+from .functor import Functor
+from .pointed import Pointed
 
-class Applicative(Pointed):
+
+class Applicative(Functor, Pointed):
 
   def ap(self, a):
-    return a.map(self.value)
+    return a.fmap(self.value)

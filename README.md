@@ -25,3 +25,15 @@ The container class
 ### Tap (K-Combinator)
 
 ### Alt (S-Combinator)
+
+## Tests
+
+```
+%> invoke test
+```
+
+## Build
+
+```
+%> invoke build
+```

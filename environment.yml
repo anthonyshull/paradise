@@ -4,5 +4,5 @@ dependencies:
     - invoke
     - mypy
     - pycodestyle
-    - pylint
+    - pyflakes
     - pytest
