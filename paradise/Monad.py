@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 from .applicative import Applicative
-
+from .curry import curry2
 
 class Monad(Applicative):
 
@@ -12,7 +12,7 @@ class Monad(Applicative):
   def join(self):
     pass
 
-
+@curry2
 def chain(fn, m):
   return m.chain(fn)
 

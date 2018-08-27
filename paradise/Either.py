@@ -17,3 +17,11 @@ class Right(Monad):
 
   def join(self):
     return self.value
+
+
+def is_left(m):
+  return type(m) == Left
+
+
+def is_right(m):
+  return type(m) == Right
